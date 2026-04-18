@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>V3 企业版加班考勤系统</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <h1>企业版加班考勤系统 V3</h1>
+      <div class="user-box">
+        当前用户：<span id="currentUser">未登录</span>
+        <button onclick="logout()">退出</button>
+      </div>
+    </header>
+
+    <section class="login-panel">
+      <h2>员工登录</h2>
+      <input id="loginName" placeholder="员工姓名">
+      <input id="loginDept" placeholder="部门">
+      <input id="loginSalary" type="number" placeholder="月薪">
+      <button onclick="login()">登录 / 创建</button>
+    </section>
+
+    <section class="toolbar">
+      <button onclick="prevMonth()">上个月</button>
+      <span id="monthLabel"></span>
+      <button onclick="nextMonth()">下个月</button>
+      <button onclick="exportCSV()">导出报表</button>
+    </section>
+
+    <section class="dashboard">
+      <div>总工时：<span id="totalHours">0</span> 小时</div>
+      <div>加班工资：¥ <span id="totalPay">0</span></div>
+      <div>员工人数：<span id="employeeCount">0</span></div>
+    </section>
+
+    <section class="calendar-header">
+      <div>日</div><div>一</div><div>二</div>
+      <div>三</div><div>四</div><div>五</div><div>六</div>
+    </section>
+
+    <section id="calendar" class="calendar"></section>
+
+    <section class="employee-list">
+      <h3>员工列表</h3>
+      <ul id="employeeList"></ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
